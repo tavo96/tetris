@@ -1,0 +1,30 @@
+# Project: Proyecto1
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = tetris.o $(RES)
+LINKOBJ  = tetris.o $(RES)
+LIBS =   
+INCS = 
+CXXINCS = 
+BIN  = tetris.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before tetris.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "tetris.exe" $(LIBS)
+
+tetris.o: tetris.cpp
+	$(CPP) -c tetris.cpp -o tetris.o $(CXXFLAGS)
